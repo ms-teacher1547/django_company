@@ -23,3 +23,12 @@ class About(models.Model):
     
     def __str__(self):
         return self.title
+    
+class Service(models.Model):
+    icon_service = models.CharField(max_length=100, db_default='')
+    title = models.CharField(max_length=100, db_default='')
+    description = models.TextField(max_length=300, db_default='')
+    speed = models.TextField(max_length=100, default='')
+    
+    def __str__(self):
+        return self.title
