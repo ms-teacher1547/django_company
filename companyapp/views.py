@@ -1,9 +1,13 @@
 from django.shortcuts import render
 
-from companyapp.models import Slider
+from companyapp.models import About, Slider
 
 # Create your views here.
 def homefunction(request):
     sliders = Slider.objects.all()
-    context = {'sliders': sliders}
+    about = About.objects.get(id=1)  # Retourne None si n'existe pas
+    context = {
+        'sliders': sliders,
+        'about': about,
+    }
     return render(request, 'companyapp/index.html', context)

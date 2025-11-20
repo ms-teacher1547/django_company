@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from companyapp.models import Slider
+from .models import About, Slider
 
 # Register your models here.
 admin.site.register(Slider)
+admin.site.register(About)
